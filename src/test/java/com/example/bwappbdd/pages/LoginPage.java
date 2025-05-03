@@ -2,10 +2,6 @@ package com.example.bwappbdd.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class LoginPage {
 
@@ -14,6 +10,7 @@ public class LoginPage {
     private final By usernameInput = By.id("login");
     private final By passwordInput = By.id("password");
     private final By loginButton = By.name("form");
+    private final By loginErrorMessage = By.xpath("//*[@id='main']/font");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -34,6 +31,11 @@ public class LoginPage {
     }
 
     public boolean isLoginError() {
-        return driver.getPageSource().contains("Invalid credentials");
+        try {
+            String errorText = driver.findElement(loginErrorMessage).getText().toLowerCase();
+            return errorText.contains("invalid");
+        } catch (Exception _) {
+            return false;
+        }
     }
-} 
+}

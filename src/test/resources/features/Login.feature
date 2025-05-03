@@ -24,8 +24,8 @@ Feature: Authentification bWAPP
 
     Scenario: Changement de mot de passe
       When je change mon mot de passe de "bug" à "bug"
-      Then je devrais être connecté
+      Then je devrais voir un message de réussite
 
     Scenario: Modifier le niveau de sécurité
-      When je change le niveau de sécurité à "1"
-      Then je devrais être sur la page de niveau de sécurité
+      When je change le niveau de sécurité à "high"
+      Then le niveau de sécurité est "high"
