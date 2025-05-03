@@ -29,7 +29,4 @@ mvn exec:exec@run-docker-container
 
 ## Lancer les test
 
-Pour lancer les test :
-
-```bash
-mvn test
+Les tests se lancent depuis le fichier test/java/RunCucumberTest
