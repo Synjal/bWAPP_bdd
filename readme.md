@@ -1,20 +1,17 @@
 # bWAPP BDD Tests
 
-Ce projet permet d'exécuter des **tests automatisés** sur l'application web **bWAPP** via **Selenium + Cucumber + Java**, dans un environnement **Dockerisé**.
+Projet de test en BDD pour le module BDD du Master M2i à MNS en 2025
+Il permet d'exécuter des **tests automatisés** sur l'application web **bWAPP** via **Selenium + Cucumber + Java**.
 
 ---
 
 ## Prérequis
 
-- Java 23
-- Maven 3.8+
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) **(avec WSL2 activé si sur Windows)**
+- Lancer Docker
 
 ---
 
 ## Lancer le conteneur Docker bWAPP
-
-Le projet contient un profil Maven permettant de lancer automatiquement le conteneur Docker bWAPP.
 
 ```bash
 mvn exec:exec@run-docker-container
